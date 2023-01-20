@@ -3,6 +3,7 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config();
+
 //db and authenticate user
 import connectDB from "./db/connect.js";
 
@@ -15,11 +16,13 @@ import notFoundMiddleware from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 
 const port = process.env.PORT || 5000;
+
 app.use(express.json());
 app.get("/", (req, res) => {
   // throw new Error("This is not working!");
-  res.send("welcome!");
+  res.send("Hello");
 });
+
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", jobsRouter);
 app.use(notFoundMiddleware);

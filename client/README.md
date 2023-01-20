@@ -187,9 +187,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 ```js
 <nav>
-  <Link to="/">Dashboard</Link>
-  <Link to="/register">Register</Link>
-  <Link to="/landing">Home</Link>
+  <Link to='/'>Dashboard</Link>
+  <Link to='/register'>Register</Link>
+  <Link to='/landing'>Home</Link>
 </nav>
 ```
 
@@ -199,7 +199,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 return (
-  <Link to="/register" className="btn btn-hero">
+  <Link to='/register' className='btn btn-hero'>
     Login / Register
   </Link>
 );
@@ -225,12 +225,12 @@ import img from "../assets/images/not-found.svg";
 import Wrapper from "../assets/wrappers/ErrorPage";
 
 return (
-  <Wrapper className="full-page">
+  <Wrapper className='full-page'>
     <div>
-      <img src={img} alt="not found" />
+      <img src={img} alt='not found' />
       <h3>text</h3>
       <p>text</p>
-      <Link to="/">back home</Link>
+      <Link to='/'>back home</Link>
     </div>
   </Wrapper>
 );
@@ -278,27 +278,27 @@ function Register() {
     console.log(e.target);
   };
   return (
-    <Wrapper className="full-page">
-      <form className="form" onSubmit={onSubmit}>
+    <Wrapper className='full-page'>
+      <form className='form' onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
 
         {/* name field */}
-        <div className="form-row">
-          <label htmlFor="name" className="form-label">
+        <div className='form-row'>
+          <label htmlFor='name' className='form-label'>
             name
           </label>
 
           <input
-            type="text"
+            type='text'
             value={values.name}
-            name="name"
+            name='name'
             onChange={handleChange}
-            className="form-input"
+            className='form-input'
           />
         </div>
 
-        <button type="submit" className="btn btn-block">
+        <button type='submit' className='btn btn-block'>
           submit
         </button>
       </form>
@@ -317,8 +317,8 @@ function Register() {
 ```js
 const FormRow = ({ type, name, value, handleChange, labelText }) => {
   return (
-    <div className="form-row">
-      <label htmlFor={name} className="form-label">
+    <div className='form-row'>
+      <label htmlFor={name} className='form-label'>
         {labelText || name}
       </label>
 
@@ -327,7 +327,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
         value={value}
         name={name}
         onChange={handleChange}
-        className="form-input"
+        className='form-input'
       />
     </div>
   );
@@ -343,7 +343,7 @@ export default FormRow;
 
 ```js
 const Alert = () => {
-  return <div className="alert alert-danger">alert goes here</div>;
+  return <div className='alert alert-danger'>alert goes here</div>;
 };
 
 export default Alert;
@@ -376,8 +376,8 @@ return (
 
     {!values.isMember && (
       <FormRow
-        type="text"
-        name="name"
+        type='text'
+        name='name'
         value={values.name}
         handleChange={handleChange}
       />
@@ -389,7 +389,7 @@ return (
     <p>
       {values.isMember ? "Not a member yet?" : "Already a member?"}
 
-      <button type="button" onClick={toggleMember} className="member-btn">
+      <button type='button' onClick={toggleMember} className='member-btn'>
         {values.isMember ? "Register" : "Login"}
       </button>
     </p>
@@ -860,9 +860,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 ```js
 <nav>
-  <Link to="/">Dashboard</Link>
-  <Link to="/register">Register</Link>
-  <Link to="/landing">Home</Link>
+  <Link to='/'>Dashboard</Link>
+  <Link to='/register'>Register</Link>
+  <Link to='/landing'>Home</Link>
 </nav>
 ```
 
@@ -872,7 +872,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 return (
-  <Link to="/register" className="btn btn-hero">
+  <Link to='/register' className='btn btn-hero'>
     Login / Register
   </Link>
 );
@@ -898,12 +898,12 @@ import img from "../assets/images/not-found.svg";
 import Wrapper from "../assets/wrappers/ErrorPage";
 
 return (
-  <Wrapper className="full-page">
+  <Wrapper className='full-page'>
     <div>
-      <img src={img} alt="not found" />
+      <img src={img} alt='not found' />
       <h3>text</h3>
       <p>text</p>
-      <Link to="/">back home</Link>
+      <Link to='/'>back home</Link>
     </div>
   </Wrapper>
 );
@@ -951,27 +951,27 @@ function Register() {
     console.log(e.target);
   };
   return (
-    <Wrapper className="full-page">
-      <form className="form" onSubmit={onSubmit}>
+    <Wrapper className='full-page'>
+      <form className='form' onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
 
         {/* name field */}
-        <div className="form-row">
-          <label htmlFor="name" className="form-label">
+        <div className='form-row'>
+          <label htmlFor='name' className='form-label'>
             name
           </label>
 
           <input
-            type="text"
+            type='text'
             value={values.name}
-            name="name"
+            name='name'
             onChange={handleChange}
-            className="form-input"
+            className='form-input'
           />
         </div>
 
-        <button type="submit" className="btn btn-block">
+        <button type='submit' className='btn btn-block'>
           submit
         </button>
       </form>
@@ -990,8 +990,8 @@ function Register() {
 ```js
 const FormRow = ({ type, name, value, handleChange, labelText }) => {
   return (
-    <div className="form-row">
-      <label htmlFor={name} className="form-label">
+    <div className='form-row'>
+      <label htmlFor={name} className='form-label'>
         {labelText || name}
       </label>
 
@@ -1000,7 +1000,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
         value={value}
         name={name}
         onChange={handleChange}
-        className="form-input"
+        className='form-input'
       />
     </div>
   );
@@ -1016,7 +1016,7 @@ export default FormRow;
 
 ```js
 const Alert = () => {
-  return <div className="alert alert-danger">alert goes here</div>;
+  return <div className='alert alert-danger'>alert goes here</div>;
 };
 
 export default Alert;
@@ -1049,8 +1049,8 @@ return (
 
     {!values.isMember && (
       <FormRow
-        type="text"
-        name="name"
+        type='text'
+        name='name'
         value={values.name}
         handleChange={handleChange}
       />
@@ -1062,7 +1062,7 @@ return (
     <p>
       {values.isMember ? "Not a member yet?" : "Already a member?"}
 
-      <button type="button" onClick={toggleMember} className="member-btn">
+      <button type='button' onClick={toggleMember} className='member-btn'>
         {values.isMember ? "Register" : "Login"}
       </button>
     </p>
@@ -1708,7 +1708,7 @@ if (isMember) {
 }
 
 return (
-  <button type="submit" className="btn btn-block" disabled={isLoading}>
+  <button type='submit' className='btn btn-block' disabled={isLoading}>
     submit
   </button>
 );
@@ -2106,7 +2106,7 @@ const onSubmit = (e) => {
 - replace in home route
 
 ```js
-<Route path="/" element={<div>dashboard</div>} />
+<Route path='/' element={<div>dashboard</div>} />
 ```
 
 - create <b>dashboard</b> directory in pages
@@ -2151,8 +2151,8 @@ const SharedLayout = () => {
   return (
     <Wrapper>
       <nav>
-        <Link to="all-jobs">all jobs</Link>
-        <Link to="add-job">all jobs</Link>
+        <Link to='all-jobs'>all jobs</Link>
+        <Link to='add-job'>all jobs</Link>
       </nav>
       <Outlet />
     </Wrapper>
@@ -2176,7 +2176,7 @@ App.js
 
 ```js
 <Route
-  path="/"
+  path='/'
   element={
     <ProtectedRoute>
       <SharedLayout />
@@ -2194,7 +2194,7 @@ import { useAppContext } from "../context/appContext";
 const ProtectedRoute = ({ children }) => {
   const { user } = useAppContext();
   if (!user) {
-    return <Navigate to="/landing" />;
+    return <Navigate to='/landing' />;
   }
   return children;
 };
@@ -2219,12 +2219,12 @@ const SharedLayout = () => {
   return (
     <>
       <Wrapper>
-        <main className="dashboard">
+        <main className='dashboard'>
           <SmallSidebar />
           <BigSidebar />
           <div>
             <Navbar />
-            <div className="dashboard-page">
+            <div className='dashboard-page'>
               <Outlet />
             </div>
           </div>
@@ -2276,9 +2276,9 @@ import Wrapper from "../assets/wrappers/Navbar";
 const Navbar = () => {
   return (
     <Wrapper>
-      <div className="nav-center">
+      <div className='nav-center'>
         <button
-          className="toggle-btn"
+          className='toggle-btn'
           onClick={() => console.log("toggle sidebar")}
         >
           <FaAlignLeft />
@@ -2286,19 +2286,19 @@ const Navbar = () => {
 
         <div>
           <Logo />
-          <h3 className="logo-text">dashboard</h3>
+          <h3 className='logo-text'>dashboard</h3>
         </div>
 
-        <div className="btn-container">
-          <button className="btn" onClick={() => console.log("show logout")}>
+        <div className='btn-container'>
+          <button className='btn' onClick={() => console.log("show logout")}>
             <FaUserCircle />
             john
             <FaCaretDown />
           </button>
-          <div className="dropdown show-dropdown">
+          <div className='dropdown show-dropdown'>
             <button
               onClick={() => console.log("logout user")}
-              className="dropdown-btn"
+              className='dropdown-btn'
             >
               logout
             </button>
@@ -2348,7 +2348,7 @@ Navbar.js;
 const { toggleSidebar } = useAppContext();
 
 return (
-  <button className="toggle-btn" onClick={toggleSidebar}>
+  <button className='toggle-btn' onClick={toggleSidebar}>
     <FaAlignLeft />
   </button>
 );
@@ -2419,8 +2419,8 @@ Navbar.js;
 const { user, logoutUser, toggleSidebar } = useAppContext();
 
 return (
-  <div className="btn-container">
-    <button className="btn" onClick={() => setShowLogout(!showLogout)}>
+  <div className='btn-container'>
+    <button className='btn' onClick={() => setShowLogout(!showLogout)}>
       <FaUserCircle />
       {user.name}
       {user && user.name}
@@ -2428,7 +2428,7 @@ return (
       <FaCaretDown />
     </button>
     <div className={showLogout ? "dropdown show-dropdown" : "dropdown"}>
-      <button onClick={logoutUser} className="dropdown-btn">
+      <button onClick={logoutUser} className='dropdown-btn'>
         logout
       </button>
     </div>
@@ -2492,15 +2492,15 @@ import Logo from "./Logo";
 export const SmallSidebar = () => {
   return (
     <Wrapper>
-      <div className="sidebar-container show-sidebar">
-        <div className="content">
-          <button className="close-btn" onClick={() => console.log("toggle")}>
+      <div className='sidebar-container show-sidebar'>
+        <div className='content'>
+          <button className='close-btn' onClick={() => console.log("toggle")}>
             <FaTimes />
           </button>
           <header>
             <Logo />
           </header>
-          <div className="nav-links">nav links</div>
+          <div className='nav-links'>nav links</div>
         </div>
       </div>
     </Wrapper>
@@ -2534,7 +2534,7 @@ return (
 SmallSidebar.js;
 
 return (
-  <button className="close-btn" onClick={toggleSidebar}>
+  <button className='close-btn' onClick={toggleSidebar}>
     <FaTimes />
   </button>
 );
@@ -2548,7 +2548,7 @@ SmallSidebar.js;
 import { NavLink } from "react-router-dom";
 
 return (
-  <div className="nav-links">
+  <div className='nav-links'>
     {links.map((link) => {
       const { text, path, id, icon } = link;
 
@@ -2561,7 +2561,7 @@ return (
           key={id}
           onClick={toggleSidebar}
         >
-          <span className="icon">{icon}</span>
+          <span className='icon'>{icon}</span>
           {text}
         </NavLink>
       );
@@ -2582,7 +2582,7 @@ import links from "../utils/links";
 
 const NavLinks = ({ toggleSidebar }) => {
   return (
-    <div className="nav-links">
+    <div className='nav-links'>
       {links.map((link) => {
         const { text, path, id, icon } = link;
 
@@ -2595,7 +2595,7 @@ const NavLinks = ({ toggleSidebar }) => {
               isActive ? "nav-link active" : "nav-link"
             }
           >
-            <span className="icon">{icon}</span>
+            <span className='icon'>{icon}</span>
             {text}
           </NavLink>
         );
@@ -2632,7 +2632,7 @@ const BigSidebar = () => {
           showSidebar ? "sidebar-container " : "sidebar-container show-sidebar"
         }
       >
-        <div className="content">
+        <div className='content'>
           <header>
             <Logo />
           </header>
@@ -2864,39 +2864,39 @@ const Profile = () => {
   };
   return (
     <Wrapper>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <h3>profile </h3>
         {showAlert && <Alert />}
 
         {/* name */}
-        <div className="form-center">
+        <div className='form-center'>
           <FormRow
-            type="text"
-            name="name"
+            type='text'
+            name='name'
             value={name}
             handleChange={(e) => setName(e.target.value)}
           />
           <FormRow
-            labelText="last name"
-            type="text"
-            name="lastName"
+            labelText='last name'
+            type='text'
+            name='lastName'
             value={lastName}
             handleChange={(e) => setLastName(e.target.value)}
           />
           <FormRow
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             value={email}
             handleChange={(e) => setEmail(e.target.value)}
           />
 
           <FormRow
-            type="text"
-            name="location"
+            type='text'
+            name='location'
             value={location}
             handleChange={(e) => setLocation(e.target.value)}
           />
-          <button className="btn btn-block" type="submit" disabled={isLoading}>
+          <button className='btn btn-block' type='submit' disabled={isLoading}>
             {isLoading ? "Please Wait..." : "save changes"}
           </button>
         </div>
@@ -3224,30 +3224,30 @@ const AddJob = () => {
 
   return (
     <Wrapper>
-      <form className="form">
+      <form className='form'>
         <h3>{isEditing ? "edit job" : "add job"} </h3>
         {showAlert && <Alert />}
 
         {/* position */}
-        <div className="form-center">
+        <div className='form-center'>
           <FormRow
-            type="text"
-            name="position"
+            type='text'
+            name='position'
             value={position}
             handleChange={handleJobInput}
           />
           {/* company */}
           <FormRow
-            type="text"
-            name="company"
+            type='text'
+            name='company'
             value={company}
             handleChange={handleJobInput}
           />
           {/* location */}
           <FormRow
-            type="text"
-            labelText="location"
-            name="jobLocation"
+            type='text'
+            labelText='location'
+            name='jobLocation'
             value={jobLocation}
             handleChange={handleJobInput}
           />
@@ -3255,10 +3255,10 @@ const AddJob = () => {
 
           {/* job status */}
 
-          <div className="btn-container">
+          <div className='btn-container'>
             <button
-              className="btn btn-block submit-btn"
-              type="submit"
+              className='btn btn-block submit-btn'
+              type='submit'
               onClick={handleSubmit}
             >
               submit
@@ -3278,16 +3278,16 @@ export default AddJob;
 ```js
 return (
   // job type
-  <div className="form-row">
-    <label htmlFor="jobType" className="form-label">
+  <div className='form-row'>
+    <label htmlFor='jobType' className='form-label'>
       job type
     </label>
 
     <select
-      name="jobType"
+      name='jobType'
       value={jobType}
       onChange={handleJobInput}
-      className="form-select"
+      className='form-select'
     >
       {jobTypeOptions.map((itemValue, index) => {
         return (
@@ -3309,8 +3309,8 @@ return (
 ```js
 const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
   return (
-    <div className="form-row">
-      <label htmlFor={name} className="form-label">
+    <div className='form-row'>
+      <label htmlFor={name} className='form-label'>
         {labelText || name}
       </label>
 
@@ -3318,7 +3318,7 @@ const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
         name={name}
         value={value}
         onChange={handleChange}
-        className="form-select"
+        className='form-select'
       >
         {list.map((itemValue, index) => {
           return (
@@ -3343,7 +3343,7 @@ return (
     {/* job status */}
 
     <FormRowSelect
-      name="status"
+      name='status'
       value={status}
       handleChange={handleJobInput}
       list={statusOptions}
@@ -3351,8 +3351,8 @@ return (
 
     {/* job type */}
     <FormRowSelect
-      labelText="type"
-      name="jobType"
+      labelText='type'
+      name='jobType'
       value={jobType}
       handleChange={handleJobInput}
       list={jobTypeOptions}
@@ -3443,11 +3443,11 @@ AddJob.js;
 const { clearValues } = useAppContext();
 
 return (
-  <div className="btn-container">
+  <div className='btn-container'>
     {/* submit button */}
 
     <button
-      className="btn btn-block clear-btn"
+      className='btn btn-block clear-btn'
       onClick={(e) => {
         e.preventDefault();
         clearValues();
@@ -3687,7 +3687,7 @@ const JobsContainer = () => {
       <h5>
         {totalJobs} job{jobs.length > 1 && "s"} found
       </h5>
-      <div className="jobs">
+      <div className='jobs'>
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />;
         })}
@@ -3783,26 +3783,26 @@ const Job = ({
   return (
     <Wrapper>
       <header>
-        <div className="main-icon">{company.charAt(0)}</div>
-        <div className="info">
+        <div className='main-icon'>{company.charAt(0)}</div>
+        <div className='info'>
           <h5>{position}</h5>
           <p>{company}</p>
         </div>
       </header>
-      <div className="content">
+      <div className='content'>
         {/* content center later */}
         <footer>
-          <div className="actions">
+          <div className='actions'>
             <Link
-              to="/add-job"
+              to='/add-job'
               onClick={() => setEditJob(_id)}
-              className="btn edit-btn"
+              className='btn edit-btn'
             >
               Edit
             </Link>
             <button
-              type="button"
-              className="btn delete-btn"
+              type='button'
+              className='btn delete-btn'
               onClick={() => deleteJob(_id)}
             >
               Delete
@@ -3827,8 +3827,8 @@ import Wrapper from "../assets/wrappers/JobInfo";
 const JobInfo = ({ icon, text }) => {
   return (
     <Wrapper>
-      <span className="icon">{icon}</span>
-      <span className="text">{text}</span>
+      <span className='icon'>{icon}</span>
+      <span className='text'>{text}</span>
     </Wrapper>
   );
 };
@@ -3839,8 +3839,8 @@ export default JobInfo;
 ```js
 Job.js;
 return (
-  <div className="content">
-    <div className="content-center">
+  <div className='content'>
+    <div className='content-center'>
       <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
       <JobInfo icon={<FaCalendarAlt />} text={date} />
       <JobInfo icon={<FaBriefcase />} text={jobType} />
@@ -4404,10 +4404,10 @@ function StatItem({ count, title, icon, color, bcg }) {
   return (
     <Wrapper color={color} bcg={bcg}>
       <header>
-        <span className="count">{count}</span>
-        <div className="icon">{icon}</div>
+        <span className='count'>{count}</span>
+        <div className='icon'>{icon}</div>
       </header>
-      <h5 className="title">{title}</h5>
+      <h5 className='title'>{title}</h5>
     </Wrapper>
   );
 }
@@ -4492,7 +4492,7 @@ export default function ChartsContainer() {
     <Wrapper>
       <h4>Monthly Applications</h4>
 
-      <button type="button" onClick={() => setBarChart(!barChart)}>
+      <button type='button' onClick={() => setBarChart(!barChart)}>
         {barChart ? "AreaChart" : "BarChart"}
       </button>
       {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
@@ -4528,18 +4528,18 @@ import {
 
 const BarChartComponent = ({ data }) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width='100%' height={300}>
       <BarChart
         data={data}
         margin={{
           top: 50,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='date' />
         <YAxis allowDecimals={false} />
         <Tooltip />
-        <Bar dataKey="count" fill="#2cb1bc" barSize={75} />
+        <Bar dataKey='count' fill='#2cb1bc' barSize={75} />
       </BarChart>
     </ResponsiveContainer>
   );
@@ -4561,18 +4561,18 @@ import {
 
 const AreaChartComponent = ({ data }) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width='100%' height={300}>
       <AreaChart
         data={data}
         margin={{
           top: 50,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='date' />
         <YAxis allowDecimals={false} />
         <Tooltip />
-        <Area type="monotone" dataKey="count" stroke="#2cb1bc" fill="#bef8fd" />
+        <Area type='monotone' dataKey='count' stroke='#2cb1bc' fill='#bef8fd' />
       </AreaChart>
     </ResponsiveContainer>
   );
@@ -4776,13 +4776,13 @@ const SearchContainer = () => {
 
   return (
     <Wrapper>
-      <form className="form">
+      <form className='form'>
         <h4>search form</h4>
         {/* search position */}
-        <div className="form-center">
+        <div className='form-center'>
           <FormRow
-            type="text"
-            name="search"
+            type='text'
+            name='search'
             value={search}
             handleChange={handleSearch}
           ></FormRow>
@@ -4829,20 +4829,20 @@ const SearchContainer = () => {
   };
   return (
     <Wrapper>
-      <form className="form">
+      <form className='form'>
         <h4>search form</h4>
         {/* search position */}
-        <div className="form-center">
+        <div className='form-center'>
           <FormRow
-            type="text"
-            name="search"
+            type='text'
+            name='search'
             value={search}
             handleChange={handleSearch}
           ></FormRow>
           {/* search by status */}
           <FormRowSelect
-            labelText="job status"
-            name="searchStatus"
+            labelText='job status'
+            name='searchStatus'
             value={searchStatus}
             handleChange={handleSearch}
             list={["all", ...statusOptions]}
@@ -4850,8 +4850,8 @@ const SearchContainer = () => {
           {/* search by type */}
 
           <FormRowSelect
-            labelText="job type"
-            name="searchType"
+            labelText='job type'
+            name='searchType'
             value={searchType}
             handleChange={handleSearch}
             list={["all", ...jobTypeOptions]}
@@ -4859,13 +4859,13 @@ const SearchContainer = () => {
           {/* sort */}
 
           <FormRowSelect
-            name="sort"
+            name='sort'
             value={sort}
             handleChange={handleSearch}
             list={sortOptions}
           ></FormRowSelect>
           <button
-            className="btn btn-block btn-danger"
+            className='btn btn-block btn-danger'
             disabled={isLoading}
             onClick={handleSubmit}
           >
@@ -5125,7 +5125,7 @@ return (
     <h5>
       {totalJobs} job{jobs.length > 1 && "s"} found
     </h5>
-    <div className="jobs">
+    <div className='jobs'>
       {jobs.map((job) => {
         return <Job key={job._id} {...job} />;
       })}
@@ -5156,14 +5156,14 @@ const PageButtonContainer = () => {
 
   return (
     <Wrapper>
-      <button className="prev-btn" onClick={prevPage}>
+      <button className='prev-btn' onClick={prevPage}>
         <HiChevronDoubleLeft />
         prev
       </button>
 
-      <div className="btn-container">buttons</div>
+      <div className='btn-container'>buttons</div>
 
-      <button className="next-btn" onClick={nextPage}>
+      <button className='next-btn' onClick={nextPage}>
         next
         <HiChevronDoubleRight />
       </button>
@@ -5186,11 +5186,11 @@ const pages = Array.from({ length: numOfPages }, (_, index) => {
 });
 
 return (
-  <div className="btn-container">
+  <div className='btn-container'>
     {pages.map((pageNumber) => {
       return (
         <button
-          type="button"
+          type='button'
           className={pageNumber === page ? "pageBtn active" : "pageBtn"}
           key={pageNumber}
           onClick={() => console.log(page)}
@@ -5232,7 +5232,7 @@ PageBtnContainer.js;
 const { changePage } = useAppContext();
 return (
   <button
-    type="button"
+    type='button'
     className={pageNumber === page ? "pageBtn active" : "pageBtn"}
     key={pageNumber}
     onClick={() => changePage(pageNumber)}
