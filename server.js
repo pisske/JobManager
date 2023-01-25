@@ -1,9 +1,9 @@
-import "express-async-errors";
 import express from "express";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config();
-
+import "express-async-errors";
+import morgan from "morgan";
 //db and authenticate user
 import connectDB from "./db/connect.js";
 
@@ -17,6 +17,9 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 
 const port = process.env.PORT || 5000;
 
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 app.use(express.json());
 app.get("/", (req, res) => {
   // throw new Error("This is not working!");
