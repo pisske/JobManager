@@ -5,7 +5,7 @@ import {
   BadRequestError,
   UnAuthenticatedError,
 } from "../errors/index.js";
-
+import attachCookies from "../utils/attachedCookies.js";
 // class CustomAPIError extends Error {
 //   constructor(message) {
 //     super(message);
@@ -30,6 +30,7 @@ const register = async (req, res) => {
   }
   const user = await User.create({ name, email, password });
   const token = user.createJWT();
+  attachCookies({ res, token });
   res.status(StatusCodes.CREATED).json({
     user: {
       email: user.email,
@@ -58,6 +59,8 @@ const login = async (req, res) => {
 
   const token = user.createJWT();
   user.password = undefined;
+  attachCookies({ res, token });
+
   res.status(StatusCodes.OK).json({ user, token, location: user.location });
   res.send("login user ");
 };
@@ -75,6 +78,7 @@ const updateUser = async (req, res) => {
   await user.save();
 
   const token = user.createJWT();
+  attachCookies({ res, token });
   res.status(StatusCodes.OK).json({ user, token, location: user.location });
   console.log(req.user);
   res.send("update user ");

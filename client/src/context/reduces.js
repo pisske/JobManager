@@ -1,4 +1,3 @@
-import { lightsalmon } from "color-name";
 import {
   DISPLAY_ALERT,
   CLEAR_ALERT,
@@ -16,6 +15,23 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_ERROR,
   UPDATE_USER_SUCCESS,
+  HANDLE_CHANGE,
+  CLEAR_VALUES,
+  CREATE_JOB_BEGIN,
+  CREATE_JOB_ERROR,
+  CREATE_JOB_SUCCESS,
+  GET_JOBS_BEGIN,
+  GET_JOBS_SUCCESS,
+  SET_EDIT_JOB,
+  DELETE_JOB_BEGIN,
+  EDIT_JOB_BEGIN,
+  EDIT_JOB_SUCCESS,
+  EDIT_JOB_ERROR,
+  SHOW_STATS_BEGIN,
+  SHOW_STATS_SUCCESS,
+  CLEAR_FILETERS,
+  CHANGE_PAGE,
+  DELETE_JOB_ERROR,
 } from "./actions";
 import { initialState } from "./appContext";
 
@@ -72,7 +88,7 @@ const reducer = (state, action) => {
       token: action.payload.token,
       user: action.payload.user,
       userLocation: action.payload.userLocation,
-      jobLocation: action.type.jobLocation,
+      jobLocation: action.payload.jobLocation,
       showAlert: true,
       alertType: "success",
       alertText: "Login Successful! Redirecting....",
@@ -96,8 +112,8 @@ const reducer = (state, action) => {
       isLoading: false,
       token: action.payload.token,
       user: action.payload.user,
-      userLocation: action.payload.userLocation,
-      jobLocation: action.type.jobLocation,
+      userLocation: action.payload.location,
+      jobLocation: action.payload.location,
       showAlert: true,
       alertType: "success",
       alertText: action.payload.alertText,
@@ -124,7 +140,7 @@ const reducer = (state, action) => {
       user: null,
       token: null,
       jobLocation: "",
-      jobLocation: "",
+      userLocation: "",
     };
   }
   if (action.type === UPDATE_USER_BEGIN) {
@@ -136,8 +152,8 @@ const reducer = (state, action) => {
       isLoading: false,
       token: action.payload.token,
       user: action.payload.user,
-      userLocation: action.payload.userLocation,
-      jobLocation: action.type.jobLocation,
+      userLocation: action.payload.location,
+      jobLocation: action.payload.location,
       showAlert: true,
       alertType: "success",
       alertText: "User Profile Updated",
@@ -150,6 +166,153 @@ const reducer = (state, action) => {
       showAlert: true,
       alertType: "danger",
       alertText: "There is an error",
+    };
+  }
+  if (action.type === HANDLE_CHANGE) {
+    return {
+      ...state,
+      page: 1,
+      [action.payload.name]: action.payload.value,
+    };
+  }
+
+  if (action.type === CLEAR_VALUES) {
+    const initialState = {
+      isEditing: false,
+      editJobId: "",
+      position: "",
+      company: "",
+      jobLocation: state.userLocation,
+      jobType: "full-time",
+      status: "pending",
+    };
+    return {
+      ...state,
+      ...initialState,
+    };
+  }
+  if (action.type === CREATE_JOB_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === CREATE_JOB_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      alertText: "new job crated",
+    };
+  }
+  if (action.type === CREATE_JOB_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      alertText: "pleaser provide all value",
+    };
+  }
+  if (action.type === GET_JOBS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === GET_JOBS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      jobs: action.payload.jobs,
+      totalJobs: action.payload.totalJobs,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
+  if (action.type === SET_EDIT_JOB) {
+    const job = state.jobs.find((job) => job._id === action.payload.id);
+    const { _id, position, company, jobLocation, jobType, status } = job;
+    return {
+      ...state,
+      isEditing: true,
+      editJobId: _id,
+      position,
+      company,
+      jobLocation,
+      jobType,
+      status,
+    };
+  }
+
+  if (action.type === DELETE_JOB_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if(action.type===DELETE_JOB_ERROR){
+    return {
+      ...state,
+      isLoading:false,
+      showAlert:true,
+      alertText:'danger',
+      alertText:action.payload.message
+    }
+  }
+  if (action.type === EDIT_JOB_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === EDIT_JOB_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      jobType: "Job Updated",
+    };
+  }
+  if (action.type === EDIT_JOB_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      jobType: action.payload.msg,
+    };
+  }
+  if (action.type === SHOW_STATS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === SHOW_STATS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      stats: action.payload.stats,
+      monthlyApplications: action.payload.monthlyApplications,
+    };
+  }
+  if (action.type === CLEAR_FILETERS) {
+    return {
+      ...state,
+      search: "",
+      searchStatus: "all",
+      searchType: "all",
+      sort: "latest",
+    };
+  }
+  if (action.type === CHANGE_PAGE) {
+    return {
+      ...state,
+      page: action.payload.page,
     };
   }
   throw new Error(`no such action:${action.type}`);
