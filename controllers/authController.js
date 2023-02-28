@@ -5,7 +5,7 @@ import {
   BadRequestError,
   UnAuthenticatedError,
 } from "../errors/index.js";
-import attachCookies from "../utils/attachedCookies.js";
+
 // class CustomAPIError extends Error {
 //   constructor(message) {
 //     super(message);
