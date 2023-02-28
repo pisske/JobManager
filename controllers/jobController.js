@@ -4,7 +4,7 @@ import {
   BadRequestError,
   UnAuthenticatedError,
   NotFoundError,
-} from "../errors/index.js";
+} from "../errors/Index.js";
 import mongoose, { mongo } from "mongoose";
 import checkPermissions from "../utils/checkPersmissions.js";
 import moment from "moment";

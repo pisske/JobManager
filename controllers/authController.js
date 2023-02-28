@@ -4,7 +4,7 @@ import {
   NotFoundError,
   BadRequestError,
   UnAuthenticatedError,
-} from "../errors/index.js";
+} from "../errors/Index.js";
 
 // class CustomAPIError extends Error {
 //   constructor(message) {

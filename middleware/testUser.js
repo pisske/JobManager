@@ -1,4 +1,4 @@
-import { BadRequestError } from "../errors/index.js";
+import { BadRequestError } from "../errors/Index.js";
 
 const testUser = (req, res, next) => {
   if (req.user.testUser) {
